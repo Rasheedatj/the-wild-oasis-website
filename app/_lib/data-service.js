@@ -33,14 +33,6 @@ export async function getCabinPrice(id) {
 }
 
 export const getCabins = async function () {
-  console.log('name');
-  console.log(
-    'getCabins... URL : ',
-    process.env.SUPABASE_URL,
-    ', KEY : ',
-    process.env.SUPABASE_KEY
-  );
-
   const { data, error } = await supabase
     .from('cabins')
     .select('id, name, maxCapacity, regularPrice, discount, image')
